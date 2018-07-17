@@ -72,7 +72,7 @@ public class shujiguanlixitong {
         Statement  statement = null;
         try {
             connection =  getconntion();
-            String sql = "delete from xuehseng where id="+id;
+            String sql = "delete from book where id="+id;
             statement = connection.createStatement();
             int rows = statement.executeUpdate(sql);
             System.out.println("有" + rows + "行被删除成功");
@@ -287,7 +287,7 @@ public class shujiguanlixitong {
 
             }
             else if (select == 3){//删除数据
-                System.out.println("请输入要删除的书籍名");
+                System.out.println("请输入要删除的id");
                 value = scanner.next();
                 shujiguanlixitong.DelateDate(Integer.parseInt(value));
                 System.out.println("是否继续删除");
@@ -295,7 +295,7 @@ public class shujiguanlixitong {
                 int count;
                 count = Integer.parseInt(value);
                 while(count == 1){
-                    System.out.println("请继续输入要删除的书籍名");
+                    System.out.println("请继续输入要删除的id");
                     value = scanner.next();
                     shujiguanlixitong.DelateDate(Integer.parseInt(value));
                 }
